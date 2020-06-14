@@ -1,0 +1,20 @@
+--- COLORS: ---
+
+Dark:   #19181b
+Accent: #26203c
+Ligth:  #c3b1ff
+
+Soft-white: #e8e8e8
+Dark-gray:  #919191
+
+Background: Dark
+Header: Accent
+
+
+--- ICONS: ---
+
+clock:    🕑
+calendar: 🗓
+first:    🥇
+second:   🥈
+third:    🥉

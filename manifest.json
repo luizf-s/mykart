@@ -1,0 +1,33 @@
+{
+  "short_name": "MyKart",
+  "name": "My Kart",
+  "description": "Histórico de corridas de kart",
+  "icons": [
+    {
+      "src": "images/kart-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "images/kart-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#19181b",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#26203c",
+  "shortcuts": [
+    {
+      "name": "MyKart races",
+      "short_name": "MyKart",
+      "description": "Histórico de corridas de kart",
+      "url": "/",
+      "icons": [
+        { "src": "images/kart-192x192.png", "sizes": "192x192" }
+      ]
+    }
+  ]
+}

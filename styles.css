@@ -1,0 +1,139 @@
+
+// dark:    #19181b
+// accent:  #26203c
+// ligth:   #c3b1ff
+// lighter: #443e59
+
+// soft-white: #e8e8e8
+// dark-gray:  #919191
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*:visited, *:link {
+  color: #fff;
+  text-decoration: none;
+}
+
+strong {
+  display: flex;
+  align-items: center;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #19181b;
+  color: #e8e8e8;
+}
+
+header {
+  background-color: #26203c;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+}
+
+h1 { font-size: 1.6em; }
+h2 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+p {
+  margin: 6px 0;
+  font-size: 1em;
+}
+
+.race-details { color: #919191; }
+
+logo>h1 { display: inline; }
+logo>h1:first-child { color: #443e59; }
+logo>h1:last-child { color: #c3b1ff; }
+
+main {
+  margin: 18px 0;
+  padding: 0 18px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.race-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.race-item>p { width: 25%; }
+
+.race-item>p:last-child { 
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.race-item>p.racer-name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 55%;
+}
+
+img.race-trace-img {
+  margin: 18px 0;
+  width: 100%;
+}
+
+.races-list>li {
+  margin: 12px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.races-list>li>strong {
+  width: 20%;  
+}
+
+.races-list>li>p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 40%;
+}
+
+.view-results {
+  width: 30%;
+  font-size: .7em;
+  padding: 3px 12px;
+  background-color: #26203c;
+  border-radius: 6px;
+  line-height: 1em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .2s;
+}
+
+.view-results:hover {
+  background-color: #302840; 
+}
+
+h3.race-date {
+  font-size: 1em;
+  text-align: center;
+  font-weight: 800;
+  margin: 18px auto;
+}
