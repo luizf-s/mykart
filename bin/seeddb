@@ -1,0 +1,168 @@
+#!node
+'use strict';
+
+const fbadmin = require('firebase-admin');
+const firestore = require('@google-cloud/firestore');
+const serviceAccount = require('./serviceAccount.json');
+
+const RACES_COLLECTION = 'races';
+
+fbadmin.initializeApp({
+  credential: fbadmin.credential.cert(serviceAccount),
+  databaseURL: '',
+});
+
+const db = fbadmin.firestore();
+
+const racesToAdd = [
+  {
+    id: '2020-06-10T15:30|casual-indoor-18-hp',
+    data: {
+      description: 'Casual Indoor - 18 HP',
+      datetime: firestore.Timestamp.fromDate(new Date('2020-06-10T15:30')),
+      raceResult: [
+        { position: 1, racerName: 'Eduardo P. C.',          bestLapTime: '1:09:102', differenceFromLeader: 0 },
+        { position: 2, racerName: 'Luiz F. C. S.',          bestLapTime: '1:10:503', differenceFromLeader: 0 },
+        { position: 3, racerName: 'Carro Tanque',           bestLapTime: '1:12:546', differenceFromLeader: 1 },
+        { position: 4, racerName: 'Carro de Pedra',         bestLapTime: '1:12:998', differenceFromLeader: 2 },
+        { position: 5, racerName: 'Coupé Mal Assombrado',   bestLapTime: '1:13:105', differenceFromLeader: 2 },
+        { position: 6, racerName: 'Carro Cheio de Truques', bestLapTime: '1:14:150', differenceFromLeader: 3 },
+        { position: 7, racerName: 'Carrinho pra Frente',    bestLapTime: '1:13:478', differenceFromLeader: 4 },
+      ]
+    },
+  }, {
+    id: '2020-06-09T14:40|casual-indoor-18-hp',
+    data: {
+      description: 'Casual Indoor - 18 HP',
+      datetime: firestore.Timestamp.fromDate(new Date('2020-06-09T14:40')),
+      raceResult: [
+        { position: 1, racerName: 'Isabella Giovana Novaes',             bestLapTime: '1:10:253', differenceFromLeader: 0 },
+        { position: 2, racerName: 'Melissa Andrea da Mata',              bestLapTime: '1:11:754', differenceFromLeader: 1 },
+        { position: 3, racerName: 'Thomas Levi André Lopes',             bestLapTime: '1:11:795', differenceFromLeader: 1 },
+        { position: 4, racerName: 'Rita Sabrina Ferreira',               bestLapTime: '1:13:133', differenceFromLeader: 2 },
+        { position: 5, racerName: 'Eduardo Pedro Henrique Souza',        bestLapTime: '1:12:995', differenceFromLeader: 2 },
+        { position: 6, racerName: 'Hugo Henry Márcio Araújo',            bestLapTime: '1:14:795', differenceFromLeader: 3 },
+        { position: 7, racerName: 'Sebastiana Luciana Mariana Teixeira', bestLapTime: '1:13:225', differenceFromLeader: 4 },
+      ]
+    },
+  }, {
+    id: '2020-06-09T13:50|casual-indoor-18-hp',
+    data: {
+      description: 'Casual Indoor - 18 HP',
+      datetime: firestore.Timestamp.fromDate(new Date('2020-06-09T13:50')),
+      raceResult: [
+        { position: 1, racerName: 'Luiz Cauã Almada',                  bestLapTime: '1:11:245', differenceFromLeader: 0 },
+        { position: 2, racerName: 'Davi Severino Gabriel da Silva',    bestLapTime: '1:11:895', differenceFromLeader: 0 },
+        { position: 3, racerName: 'Marlene Lorena Sabrina de Paula',   bestLapTime: '1:12:413', differenceFromLeader: 0 },
+        { position: 4, racerName: 'Cecília Esther Nascimento',         bestLapTime: '1:12:789', differenceFromLeader: 1 },
+        { position: 5, racerName: 'Pietro Kauê César Fogaça',          bestLapTime: '1:13:199', differenceFromLeader: 1 },
+        { position: 6, racerName: 'Luzia Gabrielly Hadassa das Neves', bestLapTime: '1:13:245', differenceFromLeader: 5 },
+        { position: 7, racerName: 'Priscila Fátima Assunção',          bestLapTime: '1:15:446', differenceFromLeader: 5 },
+      ]
+    },
+  }, {
+    id: '2020-06-08T11:30|kpi-2-rodada',
+    data: {
+      description: 'KPI - 2ª rodada',
+      datetime: firestore.Timestamp.fromDate(new Date('2020-06-08T11:30')),
+      raceResult: [
+        { position: 1, racerName: 'Pedro Fábio Elias Nascimento',  bestLapTime: '1:15:202', differenceFromLeader: 0 },
+        { position: 2, racerName: 'Marina Sônia Aline da Rosa',    bestLapTime: '1:17:553', differenceFromLeader: 0 },
+        { position: 3, racerName: 'Yago Márcio Jorge Pereira',     bestLapTime: '1:17:576', differenceFromLeader: 0 },
+        { position: 4, racerName: 'Thales Cláudio Elias Pires',    bestLapTime: '1:20:599', differenceFromLeader: 1 },
+        { position: 5, racerName: 'Giovanna Fernanda Rita da Paz', bestLapTime: '1:20:123', differenceFromLeader: 1 },
+        { position: 6, racerName: 'Joaquim Gabriel Martins',       bestLapTime: '1:23:149', differenceFromLeader: 2 },
+        { position: 7, racerName: 'Caleb Erick Ribeiro',           bestLapTime: '1:24:798', differenceFromLeader: 2 },
+      ]
+    },
+  }, {
+    id: '2020-06-09T10:30|kpi-tomada',
+    data: {
+      description: 'KPI - Tomada de tempo',
+      datetime: firestore.Timestamp.fromDate(new Date('2020-06-09T10:30')),
+      raceResult: [
+        { position: 1, racerName: 'Pedro Fábio Elias Nascimento',  bestLapTime: '1:14:202', differenceFromLeader: -1 },
+        { position: 2, racerName: 'Yago Márcio Jorge Pereira',     bestLapTime: '1:14:576', differenceFromLeader: -1 },
+        { position: 3, racerName: 'Marina Sônia Aline da Rosa',    bestLapTime: '1:15:553', differenceFromLeader: -1 },
+        { position: 4, racerName: 'Giovanna Fernanda Rita da Paz', bestLapTime: '1:20:123', differenceFromLeader: -1 },
+        { position: 5, racerName: 'Joaquim Gabriel Martins',       bestLapTime: '1:21:149', differenceFromLeader: -1 },
+        { position: 6, racerName: 'Thales Cláudio Elias Pires',    bestLapTime: '1:22:599', differenceFromLeader: -1 },
+        { position: 7, racerName: 'Caleb Erick Ribeiro',           bestLapTime: '1:27:798', differenceFromLeader: -1 },
+      ]
+    },
+  }, {
+    id: '2020-06-08T20:30|kpb-b-3-rodada',
+    data: {
+      description: 'KPB/B - 3ª rodada',
+      datetime: firestore.Timestamp.fromDate(new Date('2020-06-08T20:30')),
+      raceResult: [
+        { position: 1, racerName: 'Heloisa Marcela Martins',           bestLapTime: '0:57:542', differenceFromLeader: 0 },
+        { position: 2, racerName: 'Isaac Elias Theo Cavalcanti',       bestLapTime: '0:57:423', differenceFromLeader: 0 },
+        { position: 3, racerName: 'Catarina Jaqueline Jesus',          bestLapTime: '0:55:546', differenceFromLeader: 0 },
+        { position: 4, racerName: 'Helena Juliana Martins',            bestLapTime: '0:55:498', differenceFromLeader: 0 },
+        { position: 5, racerName: 'Rosa Adriana Almada',               bestLapTime: '0:55:289', differenceFromLeader: 0 },
+        { position: 6, racerName: 'Guilherme Benício Oliver da Costa', bestLapTime: '0:58:150', differenceFromLeader: 0 },
+        { position: 7, racerName: 'Nicolas Renan Geraldo Oliveira',    bestLapTime: '1:01:498', differenceFromLeader: 1 },
+      ]
+    },
+  }, {
+    id: '2020-06-08T19:50|kpb-a-3-rodada',
+    data: {
+      description: 'KPB/A - 3ª rodada',
+      datetime: firestore.Timestamp.fromDate(new Date('2020-06-08T19:50')),
+      raceResult: [
+        { position: 1, racerName: 'Laura Allana Malu Baptista',      bestLapTime: '0:53:902', differenceFromLeader: 0 },
+        { position: 2, racerName: 'Carlos Leonardo Murilo de Paula', bestLapTime: '0:55:483', differenceFromLeader: 0 },
+        { position: 3, racerName: 'Francisco Joaquim Julio Cardoso', bestLapTime: '0:57:376', differenceFromLeader: 0 },
+        { position: 4, racerName: 'Sophie Pietra Isabella Oliveira', bestLapTime: '0:57:795', differenceFromLeader: 0 },
+        { position: 5, racerName: 'Severino Victor Figueiredo',      bestLapTime: '0:57:925', differenceFromLeader: 0 },
+        { position: 6, racerName: 'Gustavo Tiago Rodrigues',         bestLapTime: '0:59:259', differenceFromLeader: 0 },
+        { position: 7, racerName: 'Heitor Giovanni Carvalho',        bestLapTime: '0:59:578', differenceFromLeader: 1 },
+      ]
+    },
+  }, {
+    id: '2020-06-08T19:20|kpb-b-tomada',
+    data: {
+      description: 'KPB/B - Tomada de tempo',
+      datetime: firestore.Timestamp.fromDate(new Date('2020-06-08T19:20')),
+      raceResult: [
+        { position: 1, racerName: 'Heloisa Marcela Martins',           bestLapTime: '0:56:234', differenceFromLeader: -1 },
+        { position: 2, racerName: 'Isaac Elias Theo Cavalcanti',       bestLapTime: '0:56:645', differenceFromLeader: -1 },
+        { position: 3, racerName: 'Catarina Jaqueline Jesus',          bestLapTime: '0:56:965', differenceFromLeader: -1 },
+        { position: 4, racerName: 'Helena Juliana Martins',            bestLapTime: '0:57:598', differenceFromLeader: -1 },
+        { position: 5, racerName: 'Rosa Adriana Almada',               bestLapTime: '0:57:942', differenceFromLeader: -1 },
+        { position: 6, racerName: 'Guilherme Benício Oliver da Costa', bestLapTime: '0:58:113', differenceFromLeader: -1 },
+        { position: 7, racerName: 'Nicolas Renan Geraldo Oliveira',    bestLapTime: '0:59:342', differenceFromLeader: -1 },
+      ]
+    },
+  }, {
+    id: '2020-06-08T18:30|kpb-a-tomada',
+    data: {
+      description: 'KPB/A - Tomada de tempo',
+      datetime: firestore.Timestamp.fromDate(new Date('2020-06-08T18:30')),
+      raceResult: [
+        { position: 1, racerName: 'Laura Allana Malu Baptista',      bestLapTime: '0:51:120', differenceFromLeader: -1 },
+        { position: 2, racerName: 'Carlos Leonardo Murilo de Paula', bestLapTime: '0:53:159', differenceFromLeader: -1 },
+        { position: 3, racerName: 'Francisco Joaquim Julio Cardoso', bestLapTime: '0:53:588', differenceFromLeader: -1 },
+        { position: 4, racerName: 'Sophie Pietra Isabella Oliveira', bestLapTime: '0:54:296', differenceFromLeader: -1 },
+        { position: 5, racerName: 'Severino Victor Figueiredo',      bestLapTime: '0:54:645', differenceFromLeader: -1 },
+        { position: 6, racerName: 'Gustavo Tiago Rodrigues',         bestLapTime: '0:54:967', differenceFromLeader: -1 },
+        { position: 7, racerName: 'Heitor Giovanni Carvalho',        bestLapTime: '0:56:432', differenceFromLeader: -1 },
+      ]
+    },
+  }
+];
+
+function seedDB() {
+  racesToAdd.forEach(race => {
+    console.log(`Adding ${race.id} to db`);
+    db.collection(RACES_COLLECTION)
+      .doc(race.id)
+      .set(race.data)
+      .then(() => console.log(`Race ${race.id} added to db succesfully`))
+  });
+  return Promise.resolve();
+}
+
+
+seedDB().then(console.log('Script finished'));
