@@ -84,10 +84,10 @@ function renderPreviousRaces(races) {
     return '<li>\n'
       + `<h3 class="race-date">${dailyRaces.date}</h3>\n`
       + '   <ul class="races-list">\n'
-      +         getRacesListHTML(dailyRaces.races).join('\n') // this writes a comma 😢
+      +         getRacesListHTML(dailyRaces.races).join('\n')
       + '   </ul>\n'
       + '</li>\n';
-  });
+  }).join('\n');
   previousRaces.innerHTML = dailyRacesHTML;
 }
 
