@@ -14,6 +14,7 @@ function onInstall(event) {
       '/icons/facebook.svg',
       '/icons/instagram.svg',
       '/icons/youtube.svg',
+      '/icons/close.svg',
     ]);
   }
   event.waitUntil(
@@ -46,7 +47,7 @@ function onFetch(event) {
     console.log('[SW] request matched with a cached request');
     if (response)
       return response;
-    return fetch(event.request).then();
+    return fetch(event.request);
   }
   event.respondWith(
     caches.match(event.request)

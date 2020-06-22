@@ -3,6 +3,7 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>MyKart</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -17,12 +18,15 @@
       <logo>
         <h1>My</h1><h1>Kart</h1>
       </logo>
+      <button id="install-button" hidden />
+        Instalar
+      </button>
     </header>
 
     <main>
       <h2>Última corrida</h2>
       <p class="race-details">
-        🕑 15:30g 🗓 10 jun 2020<br />
+        🕑 15:30 🗓 10 jun 2020<br />
         Kartódromo do seu Zé (Belo Horizonte)<br />
         Casual Indoor - 18 HP
       </p>
@@ -140,7 +144,78 @@
         </li>
       </ul>
 
-    <main>
+    </main>
+
+    <div class="modal">
+      <div class="modal-header">
+        <img
+          src="icons/close.svg"
+          alt="Fechar modal"
+          width="18px"
+          height="18px"
+          onclick="hideModal()"
+        />
+      </div>
+      <div class="modal-body">
+
+        <h2>Última corrida</h2>
+        <p class="race-details">
+          🕑 15:30 🗓 10 jun 2020<br />
+          Kartódromo do seu Zé (Belo Horizonte)<br />
+          Casual Indoor - 18 HP
+        </p>
+
+        <ul>
+          <li class="race-item">
+            <p class="racer-name">🥇 Eduardo P. C.</p>
+            <p>1:09:102</p>
+            <p>Líder</p>
+          </li>
+          <li class="race-item">
+            <p class="racer-name">🥈 Luiz F. C. S.</p>
+            <p>1:10:532</p>
+            <p>0 voltas</p>
+          </li>
+          <li class="race-item">
+            <p class="racer-name">🥉 Carro Tanque</p>
+            <p>1:12:547</p>
+            <p>-1 volta</p>
+          </li>
+          <li class="race-item">
+            <p class="racer-name">4º Carro de Pedra</p>
+            <p>1:12:998</p>
+            <p>-2 voltas</p>
+          </li>
+          <li class="race-item">
+            <p class="racer-name">5º Coupé Mal Assombrado</p>
+            <p>1:13:105</p>
+            <p>-2 voltas</p>
+          </li>
+          <li class="race-item">
+            <p class="racer-name">6º Carro Cheio de Truques</p>
+            <p>1:14:150</p>
+            <p>-3 voltas</p>
+          </li>
+          <li class="race-item">
+            <p class="racer-name">7º Carro Cheio de Truques</p>
+            <p>1:13:476</p>
+            <p>-5 voltas</p>
+          </li>
+          <li class="race-item">
+            <p class="racer-name">8º Carrinho Pra Frente</p>
+            <p>1:14:785</p>
+            <p>-5 voltas</p>
+          </li>
+        </ul>
+
+        <img
+          src="images/pista_tracado_um.jpg"
+          alt="Traçado da última corrida"
+          class="race-trace-img"
+        />
+
+      </div>
+    </div>
   </body>
 
   <script>
@@ -151,9 +226,12 @@
 
       window.addEventListener('load', function() {
         console.log('[SW] ready to register service worker');
-        navigator.serviceWorker.register('sw.js');
+        // navigator.serviceWorker.register('sw.js');
       });
     }
   </script>
-  
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script> 
+  <script src="repository.js"></script>
+  <script src="app.js"></script>
 </html>
