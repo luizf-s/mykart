@@ -47,7 +47,7 @@ function renderMainRace(race) {
 
 function renderRaceDetails(race) {
   const description = getDescription(race);
-  document.querySelector('p.race-details').innerText = description;
+  document.querySelector('p.race-details').innerHTML = description;
 }
 
 function renderRacers(race) {
@@ -65,7 +65,7 @@ function writeRacerPlace(position) {
 
 function getDescription(race) {
   console.log(racesFromFirebase);
-  const dayMonthYear = getFormattedRaceDate(race.datetime, 'short');
+  const dayMonthYear = getDayMonthYear(race.datetime, 'short');
   const hourMinute = getHourMinute(race.datetime);
   return `🕑 ${hourMinute} 🗓 ${dayMonthYear}<br />\n`
     + 'Kartódromo do seu Zé (Belo Horizonte)<br />\n'
@@ -93,7 +93,7 @@ function renderPreviousRaces(races) {
 
 function getRacesDates(races) {
   return races
-    .map(race => getFormattedRaceDate(race.datetime, 'long'))
+    .map(race => getDayMonthYear(race.datetime, 'long'))
     .sort()                                            // TODO: VERIFICAR
     .reduce(removeRepeated, [])
     .reverse();                                        // TODO: VERIFICAR
@@ -116,7 +116,7 @@ function getRacesListHTML(races) {
 }
 
 
-function getFormattedRaceDate(date, monthType='long') {
+function getDayMonthYear(date, monthType='long') {
   return date.toDate().toLocaleString('pt-br', {
     day: '2-digit',
     month: monthType,
@@ -135,7 +135,7 @@ function getHourMinute(date) {
 
 // TODO: rename, rewrite with renderPreviousRaces racesList
 function getRacesOfDay(date, races) {
-  return races.filter(race => getFormattedRaceDate(race.datetime, 'long') === date);
+  return races.filter(race => getDayMonthYear(race.datetime, 'long') === date);
 }
 
 
