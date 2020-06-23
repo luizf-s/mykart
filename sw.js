@@ -56,6 +56,7 @@ function onFetch(event) {
     console.log('[SW] request matched with a cached request');
     if (response)
       return response;
+    // TODO: CACHEAR RESPOSTA
     return fetch(event.request);
   }
   event.respondWith(
