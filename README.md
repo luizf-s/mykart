@@ -1,5 +1,7 @@
 # MyKart
 
+![alt mainscreen](toReadme/tela_inicial.png)
+
 Aplicação para verificar os resultados da última corrida que ocorreu
 no kartódromo e corridas anteriores no mesmo kartódromo.
 
@@ -14,8 +16,3 @@ com credenciais de conta de serviço do firebase na mesma pasta. Depois
 O projeto é um PWA. Pode ser instalado no computador ou telefone clicando
 no botão **"Instalar"** ou pelo menu do navegador Firefox, Chrome ou Edge.
 
-
-TODO:
-colocar gif mostrando o funcionamento do aplicativo.
-
-![alt mainscreen](toReadme/tela_inicial.png)

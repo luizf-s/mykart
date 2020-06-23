@@ -15,7 +15,7 @@
     }
   ],
   "start_url": "/index.html",
-  "prefer_related_applications": "false",
+  "prefer_related_applications": false,
   "background_color": "#19181b",
   "display": "standalone",
   "scope": "/",

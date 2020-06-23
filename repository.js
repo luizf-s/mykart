@@ -3,9 +3,9 @@
 const RACES_COLLECTION = 'races';
 
 firebase.initializeApp({
-  apiKey: 'AIzaSyCTuHobf6C6hEIW9cOzL7XFIorYUa21TrQ',
+  apiKey: '',
   authDomain: '',
-  projectId: 'mykart-ae255',
+  projectId: '',
 });
 
 const db = firebase.firestore();

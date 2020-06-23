@@ -1,30 +1,30 @@
 'use strict';
 
 const CACHE_VERSION = 'my-kart-v1';
-const EXPECTED_CACHES_KEYS = ['static-v1'];
-const STATIC_FILES_TO_CACHE = [
-  '/',
-
-  '/index.html',
-  '/styles.css',
-
-  '/images/pista_tracado_um.jpg',
-  '/icons/close.svg',
-
-  '/app.js',
-  '/events.js',
-  '/repository.js',
-  '/utils.js',
-  '/view.js',
-  '/viewUtils.js',
-];
+const EXPECTED_CACHES_KEYS = ['my-kart-v1'];
 
 console.log('[SW] service worker registered');
 
 function onInstall(event) {
   console.log('[SW] Installing service worker');
   function addCache(cache) {
-    cache.addAll(STATIC_FILES_TO_CACHE);
+    cache.addAll([
+      '/',
+
+      '/index.html',
+      '/styles.css',
+      '/spinner.css',
+
+      '/images/pista_tracado_um.jpg',
+      '/icons/close.svg',
+
+      '/app.js',
+      '/events.js',
+      '/repository.js',
+      '/utils.js',
+      '/view.js',
+      '/viewUtils.js',
+    ]);
   }
   event.waitUntil(
     caches
