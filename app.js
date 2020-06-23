@@ -27,4 +27,6 @@ function saveResultsOnGlobalVariable(races) {
   racesFromFirebase = races;
 };
 
+renderSpinner(document.querySelector('main>ul'));
+renderSpinner(document.querySelector('main>ul.races-dates'));
 fetchRaces(onFetchRaces);
