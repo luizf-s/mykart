@@ -18,4 +18,4 @@ no botão **"Instalar"** ou pelo menu do navegador Firefox, Chrome ou Edge.
 TODO:
 colocar gif mostrando o funcionamento do aplicativo.
 
-[!alt mainscreen](toReadme/tela_inicial.png)
+![alt mainscreen](toReadme/tela_inicial.png)
